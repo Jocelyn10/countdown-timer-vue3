@@ -7,7 +7,7 @@
   </p>
 </template>
 <script>
-const futureDate = new Date(2050, 0, 1);
+const futureDate = new Date(2050, 0, 1); // This is our reference
 const getDateDiff = (date1, date2) => {
   const diff = new Date(date2.getTime() - date1.getTime());
   return {
@@ -19,6 +19,7 @@ const getDateDiff = (date1, date2) => {
     second: diff.getUTCSeconds(),
   };
 };
+
 export default {
   name: "App",
   data() {
@@ -43,6 +44,7 @@ export default {
     },
   },
   beforeMount() {
+    // This line is called each minute
     this.timer = setInterval(this.getDiff, 1000);
   },
   beforeUnmount() {
